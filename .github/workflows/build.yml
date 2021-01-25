@@ -87,5 +87,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          repository: hybridadmin/unbound
+          repository: hybridadmin/ansible-alpine
           readme-filepath: ./README.md
