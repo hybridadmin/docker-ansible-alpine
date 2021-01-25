@@ -12,8 +12,8 @@
 
 ## Supported tags and respective `Dockerfile` links
 
-- [`latest`, `edge`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/edge/Dockerfile)
-- [`3.13`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.13/Dockerfile)
+- [`edge`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/edge/Dockerfile)
+- [`3.13`, `latest`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.13/Dockerfile)
 - [`3.12`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.12/Dockerfile)
 - [`3.11`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.11/Dockerfile)
 - [`3.10`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.10/Dockerfile)
