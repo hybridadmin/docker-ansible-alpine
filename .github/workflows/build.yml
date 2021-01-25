@@ -16,19 +16,24 @@ jobs:
         distribution:
           - image: alpine
             version: "edge"
+            tags: "edge"
             platform: "linux/amd64"
           - image: alpine
             version: "3.10"
             platform: "linux/amd64"
+            tags: "3.10"
           - image: alpine
             version: "3.11"
             platform: "linux/amd64"
+            tags: "3.11"
           - image: alpine
             version: "3.12"
             platform: "linux/amd64"
+            tags: "3.12"
           - image: alpine
-            version: "3.13,latest"
+            version: "3.13"
             platform: "linux/amd64"
+            tags: "3.13,latest"
 
     steps:
       - name: Checkout repository
@@ -55,7 +60,7 @@ jobs:
             --no-cache \
             --rm \
             --file=${{ matrix.distribution.version }}/Dockerfile \
-            $(for i in $(echo ${{ matrix.distribution.version }} | sed "s/,/ /g"); do echo "--tag hybridadmin/ansible-${{ matrix.distribution.image }}:$i "; done) \
+            $(for i in $(echo ${{ matrix.distribution.tags }} | sed "s/,/ /g"); do echo "--tag hybridadmin/ansible-${{ matrix.distribution.image }}:$i "; done) \
             ${{ matrix.distribution.version }}
 
       - name: Test Docker images
@@ -73,6 +78,6 @@ jobs:
           docker buildx build \
             --platform ${{ matrix.distribution.platform }} \
             --file=${{ matrix.distribution.version }}/Dockerfile \
-            $(for i in $(echo ${{ matrix.distribution.version }} | sed "s/,/ /g"); do echo "--tag hybridadmin/ansible-${{ matrix.distribution.image }}:$i "; done) \
+            $(for i in $(echo ${{ matrix.distribution.tags }} | sed "s/,/ /g"); do echo "--tag hybridadmin/ansible-${{ matrix.distribution.image }}:$i "; done) \
             ${{ matrix.distribution.version }}
 
