@@ -73,11 +73,19 @@ jobs:
             hybridadmin/ansible-${{ matrix.distribution.image }}:${{ matrix.distribution.version }} > "${container_id}"
           inspec exec tests/inspec --chef-license accept-silent -t docker://$(cat ${container_id})
 
-      - name: Build Docker images on all platforms
+      - name: Build/Push Docker to DockerHub
         run: |
           docker buildx build \
+            --push \
             --platform ${{ matrix.distribution.platform }} \
             --file=${{ matrix.distribution.version }}/Dockerfile \
             $(for i in $(echo ${{ matrix.distribution.tags }} | sed "s/,/ /g"); do echo "--tag hybridadmin/ansible-${{ matrix.distribution.image }}:$i "; done) \
             ${{ matrix.distribution.version }}
 
+      - name: Update Repo Readme/Description
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          repository: hybridadmin/unbound
+          readme-filepath: ./README.md
