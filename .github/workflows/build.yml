@@ -50,7 +50,7 @@ jobs:
             --rm \
             --file=${{ matrix.distribution.version }}/Dockerfile \
             $(for i in $(echo ${{ matrix.distribution.version }} | sed "s/,/ /g"); do echo "--tag hybridadmin/${{ matrix.distribution.image }}:$i "; done) \
-            ${{ matrix.distribution.image }}-ansible
+            ${{ matrix.distribution.version }}
 
       - name: Test Docker images
         run: |
@@ -68,5 +68,5 @@ jobs:
             --platform ${{ matrix.distribution.platform }} \
             --file=${{ matrix.distribution.version }}/Dockerfile \
             $(for i in $(echo ${{ matrix.distribution.version }} | sed "s/,/ /g"); do echo "--tag hybridadmin/${{ matrix.distribution.image }}:$i "; done) \
-            ${{ matrix.distribution.image }}-ansible
+            ${{ matrix.distribution.version }}
 
