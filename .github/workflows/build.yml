@@ -55,7 +55,7 @@ jobs:
             --no-cache \
             --rm \
             --file=${{ matrix.distribution.version }}/Dockerfile \
-            $(for i in $(echo ${{ matrix.distribution.version }} | sed "s/,/ /g"); do echo "--tag hybridadmin/${{ matrix.distribution.image }}:$i "; done) \
+            $(for i in $(echo ${{ matrix.distribution.version }} | sed "s/,/ /g"); do echo "--tag hybridadmin/ansible-${{ matrix.distribution.image }}:$i "; done) \
             ${{ matrix.distribution.version }}
 
       - name: Test Docker images
@@ -73,6 +73,6 @@ jobs:
           docker buildx build \
             --platform ${{ matrix.distribution.platform }} \
             --file=${{ matrix.distribution.version }}/Dockerfile \
-            $(for i in $(echo ${{ matrix.distribution.version }} | sed "s/,/ /g"); do echo "--tag hybridadmin/${{ matrix.distribution.image }}:$i "; done) \
+            $(for i in $(echo ${{ matrix.distribution.version }} | sed "s/,/ /g"); do echo "--tag hybridadmin/ansible-${{ matrix.distribution.image }}:$i "; done) \
             ${{ matrix.distribution.version }}
 
