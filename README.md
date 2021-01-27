@@ -1,4 +1,5 @@
 # Alpine Docker Images with ansible
+![Build](https://github.com/hybridadmin/docker-ansible-alpine/workflows/Build/badge.svg?branch=main)
 
 > Alpine Docker images to be used for testing ansible playbooks and roles.
 
