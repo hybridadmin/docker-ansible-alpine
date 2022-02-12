@@ -2,7 +2,7 @@ FROM alpine:3.10
 LABEL maintainer="Tinashe Chikomo <tinashe@chikomo.net>"
 
 # Install Ansible
-RUN apk add --no-cache git ansible sudo openssh unzip tar rsync libc6-compat
+RUN apk add --no-cache git ansible sudo openssh unzip tar rsync libc6-compat gcc musl-dev python3-dev
 
 # Upgrade pip and Install modules
 RUN python3 -m pip install -U pip \
