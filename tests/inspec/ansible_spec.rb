@@ -15,7 +15,7 @@ control 'ansible-01' do
       describe pip('ansible') do
         it { should be_installed }
       end
-      describe pip('ansible', '/usr/bin/pip3.8') do
+      describe pip('ansible', '/usr/bin/pip3') do
         it { should be_installed }
       end
       describe pip('ansible', 'python3 -m pip') do

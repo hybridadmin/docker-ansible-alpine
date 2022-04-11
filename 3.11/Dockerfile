@@ -6,7 +6,7 @@ RUN apk add --no-cache git sudo openssh unzip tar rsync libc6-compat gcc musl-de
 
 # Upgrade pip and Install modules
 RUN python3 -m pip install -U pip \
-    && python3 -m pip install pymysql yamllint ansible-lint
+    && python3 -m pip install pymysql yamllint ansible ansible-lint
 
 # Add ansible config
 RUN mkdir -p /etc/ansible
