@@ -13,11 +13,10 @@
 
 ## Supported tags and respective `Dockerfile` links
 
-- [`edge`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/edge/Dockerfile)
-- [`3.13`, `latest`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.13/Dockerfile)
-- [`3.12`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.12/Dockerfile)
-- [`3.11`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.11/Dockerfile)
-- [`3.10`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.10/Dockerfile)
+- [`3.20`, `latest`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.20/Dockerfile)
+- [`3.19`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.19/Dockerfile)
+- [`3.18`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.18/Dockerfile)
+- [`3.17`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.17/Dockerfile)
 
 ## How to Build the image
 
