@@ -1,12 +1,8 @@
-FROM alpine:3.12
+FROM alpine:3.20
 LABEL maintainer="Tinashe Chikomo <tinashe@chikomo.net>"
 
 # Install Ansible
 RUN apk add --no-cache git sudo openssh unzip tar rsync libc6-compat gcc musl-dev python3-dev libffi-dev
-
-# Rust fix
-RUN curl --proto '=https' --tlsv1.2 -sSf -y https://sh.rustup.rs | sh
-ENV PATH /home/pn/.cargo/bin:$PATH
 
 # Upgrade pip and Install modules
 RUN python3 -m ensurepip \
