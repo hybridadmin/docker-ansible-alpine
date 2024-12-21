@@ -1,6 +1,6 @@
 # Alpine Docker Images with ansible
 
-![Build](https://github.com/hybridadmin/docker-ansible-alpine/workflows/Build/badge.svg?branch=main) ![Docker Pulls](https://img.shields.io/docker/pulls/hybridadmin/ansible-alpine)
+![Build](https://img.shields.io/github/actions/workflow/status/hybridadmin/docker-ansible-alpine/build.yml) ![Docker Pulls](https://img.shields.io/docker/pulls/hybridadmin/ansible-alpine)
 
 > Alpine Docker images to be used for testing ansible playbooks and roles.
 
@@ -13,7 +13,8 @@
 
 ## Supported tags and respective `Dockerfile` links
 
-- [`3.20`, `latest`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.20/Dockerfile)
+- [`3.21`, `latest`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.21/Dockerfile)
+- [`3.20`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.20/Dockerfile)
 - [`3.19`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.19/Dockerfile)
 - [`3.18`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.18/Dockerfile)
 - [`3.17`](https://github.com/hybridadmin/docker-ansible-alpine/tree/main/3.17/Dockerfile)
@@ -38,7 +39,7 @@ docker pull hybridadmin/ansible-alpine:latest
 Run a container using the image with the following command:
 
 ```console
-docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro hybridadmin/ansible-alpine:latest
+docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:rw --cgroupns=host hybridadmin/ansible-alpine:latest
 ```
 
 Use ansible inside the container:
